@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Podfilter</title>
+    <title>{{ env('APP_NAME') }}</title>
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="/assets/css/styles.min.css">
@@ -14,10 +14,15 @@
 <div class="contact-clean" style="height: 100%;">
     <form method="post" action="/create">
         <h2 class="text-center"><strong>Podfilter</strong></h2>
-        <div class="form-group"><input class="form-control" type="url" id="textUrl" name="url"
-                                       placeholder="Podcast Feed-URL" required=""><small class="form-text text-muted">Trage
-            hier die URL zu dem XML Feed deines zu filternden Podcasts ein. Wenn du diese nicht kennst, kannst du sie
-            auf <a href="https://www.listennotes.com/" target="_blank">listennotes.com</a> herausfinden.</small></div>
+        <div class="form-group">
+            <input class="form-control" type="url" id="textUrl" name="url"
+                   placeholder="Podcast RSS-Feed URL" required="">
+            <small class="form-text text-muted">
+                Trage hier die URL zu dem XML Feed deines zu filternden Podcasts ein. Wenn du diese nicht kennst, kannst
+                du
+                sie auf <a href="https://www.listennotes.com/" target="_blank">listennotes.com</a> herausfinden.
+            </small>
+        </div>
         <div
             class="form-group">
             <div class="form-row" style="margin: 0;">
@@ -36,9 +41,13 @@
                     </div>
                 </div>
             </div>
-            <small class="form-text text-muted" id="hintWhitelist">Erlaubt nur Folgen, die eins der unten angegebenen
-                Wörter im Folgentitel beinhaltet.</small><small class="form-text text-muted" id="hintBlacklist">Erlaubt
-            nur Folgen, die die unten angegebenen Wörter <strong>NICHT</strong> im Folgentitel beinhalten.</small></div>
+            <small class="form-text text-muted" id="hintWhitelist">
+                Erlaubt nur Folgen, die eins der unten angegebenen Wörter im Folgentitel beinhaltet.
+            </small>
+            <small class="form-text text-muted" id="hintBlacklist">
+                Erlaubt nur Folgen, die die unten angegebenen Wörter <strong>NICHT</strong> im Folgentitel beinhalten.
+            </small>
+        </div>
         <div
             class="form-group"><textarea class="form-control" id="textFilter" name="filter"
                                          placeholder="Filter (einen pro Zeile)" style="height: 200px;"

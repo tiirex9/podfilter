@@ -17,6 +17,10 @@ class UrlGenerator extends Controller
             $type = $_POST['type'];
             $filter = $_POST['filter'];
 
+            if (!in_array($type, ['whitelist', 'blacklist'])) {
+                return response('Invalid type.', 400);
+            }
+
             $baseUrl = env('APP_URL') . '/feed?';
 
             $query = http_build_query([
@@ -27,7 +31,7 @@ class UrlGenerator extends Controller
             return view('url')->with('url', $baseUrl . $query);
         }
 
-        return $this->showForm();
+        return redirect('/');
     }
 
 }

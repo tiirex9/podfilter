@@ -14,4 +14,5 @@
 
 $router->get('/', 'UrlGenerator@showForm');
 $router->post('/create', 'UrlGenerator@generateUrl');
+$router->get('/create', 'UrlGenerator@generateUrl');
 $router->get('/feed', 'Podfilter@filter');
