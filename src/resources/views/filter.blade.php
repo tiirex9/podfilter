@@ -12,13 +12,13 @@
 
 <body style="height: 100%;">
 <div class="contact-clean" style="height: 100%;">
-    <form method="post" action="/create">
+    <form method="post" action="/url">
         <h2 class="text-center"><strong>Podfilter</strong></h2>
         <div class="form-group">
             <input class="form-control" type="url" id="textUrl" name="url"
                    placeholder="Podcast RSS-Feed URL" required="">
             <small class="form-text text-muted">
-                Trage hier die URL zu dem XML Feed deines zu filternden Podcasts ein. Wenn du diese nicht kennst, kannst
+                Trage hier die URL zu dem RSS Feed deines zu filternden Podcasts ein. Wenn du diese nicht kennst, kannst
                 du
                 sie auf <a href="https://www.listennotes.com/" target="_blank">listennotes.com</a> herausfinden.
             </small>

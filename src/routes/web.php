@@ -13,6 +13,6 @@
 
 
 $router->get('/', 'UrlGenerator@showForm');
-$router->post('/create', 'UrlGenerator@generateUrl');
-$router->get('/create', 'UrlGenerator@generateUrl');
+$router->post('/url', 'UrlGenerator@generateUrl');
+$router->get('/url', 'UrlGenerator@generateUrl');
 $router->get('/feed', 'Podfilter@filter');
