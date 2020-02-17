@@ -13,7 +13,7 @@
 <body style="height: 100%;">
 <div class="contact-clean" style="height: 100%;">
     <form method="post" action="/url">
-        <h2 class="text-center"><strong>Podfilter</strong></h2>
+        <h2 class="text-center"><strong>{{ env('APP_NAME') }}</strong></h2>
         <div class="form-group">
             <input class="form-control" type="url" id="textUrl" name="url"
                    placeholder="Podcast RSS-Feed URL" required="">

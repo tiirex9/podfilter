@@ -11,7 +11,6 @@
 |
 */
 
-
 $router->get('/', 'UrlGenerator@showForm');
 $router->post('/url', 'UrlGenerator@generateUrl');
 $router->get('/url', 'UrlGenerator@generateUrl');
