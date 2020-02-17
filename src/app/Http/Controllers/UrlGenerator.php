@@ -39,7 +39,9 @@ class UrlGenerator extends Controller
                 return !empty(trim($item));
             });
 
-            $baseUrl = env('APP_URL') . '/feed?';
+            $protocol = (isset($_SERVER['HTTPS'])) ? 'https://' : 'http://';
+            $host = $_SERVER['HTTP_HOST'];
+            $baseUrl =  $protocol . $host . '/feed?';
 
             $query = http_build_query([
                 'url' => $podcastUrl,
