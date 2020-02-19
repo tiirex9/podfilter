@@ -21,7 +21,8 @@ class UrlGenerator extends Controller
                 $input = $this->validate($request, [
                     'url' => 'required|url',
                     'type' => ['required', Rule::in(['whitelist', 'blacklist'])],
-                    'filter' => 'required'
+                    'filter' => 'required',
+                    ''
                 ], [
                     'required' => 'Das Feld :attribute ist ein Pflichtfeld.',
                     'type.in' => 'Bitte wähle entweder Whitelist oder Blacklist aus.'
