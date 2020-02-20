@@ -25,6 +25,8 @@ $app = new Laravel\Lumen\Application(
 
 // $app->withEloquent();
 
+$app->configure('app');
+
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings

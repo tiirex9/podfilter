@@ -12,8 +12,13 @@
 
 <body>
 <div class="contact-clean">
-    <form method="post">
+    <form method="post" action="/url">
         <h2 class="text-center"><strong>{{ env('APP_NAME') }}</strong></h2>
+        @if (isset($errors))
+            <p class="alert alert-danger">
+                {!! $errors !!}
+            </p>
+        @endif
         <div class="form-group"><input class="form-control" type="url" id="textUrl" name="url" placeholder="Podcast Feed-URL" required=""><small class="form-text text-muted">Trage hier die URL zu dem XML Feed deines zu filternden Podcasts ein. Wenn du diese nicht kennst, kannst du sie auf <a href="https://www.listennotes.com/">listennotes.com</a> herausfinden.</small></div>
         <div
             class="form-group">
@@ -26,7 +31,7 @@
                 </div>
             </div><small class="form-text text-muted" id="hint-whitelist">Erlaubt nur Episoden, die eins der unten angegebenen Wörter im Titel beinhaltet.</small><small class="form-text text-muted d-none" id="hint-blacklist">Erlaubt nur Episoden, die die unten angegebenen Wörter <strong>NICHT</strong> im Titel beinhalten.</small></div>
         <div
-            class="form-group"><textarea class="form-control" id="textFilter" placeholder="Filter (einen pro Zeile)" style="height: 200px;" required=""></textarea></div>
+            class="form-group"><textarea name="filter" class="form-control" id="textFilter" placeholder="Filter (einen pro Zeile)" style="height: 200px;" required></textarea></div>
         <div class="form-group"><button class="btn btn-primary btn-block" type="submit">URL erzeugen</button></div><div class="collapse-line-element">
             <div class="collapse-line-container">
                 <div class="collapse-line">
