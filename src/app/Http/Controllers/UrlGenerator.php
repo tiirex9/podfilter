@@ -23,17 +23,7 @@ class UrlGenerator extends Controller
                     'type' => ['required', Rule::in(['whitelist', 'blacklist'])],
                     'filter' => 'required',
                     'custom_title' => 'nullable',
-                    'custom_artwork' => ['nullable', Rule::dimensions()->ratio('1/1')->minWidth(1400)->minHeight(1400)->maxWidth(3000)->maxHeight(3000)]
-                ], [
-                    'required' => ':attribute ist ein Pflichtfeld.',
-                    'url' => ':attribute enthält keine gültige URL.',
-                    'type.in' => 'Bitte wähle entweder Whitelist oder Blacklist aus.'
-                ], [
-                    'url' => 'Podcast Feed-URL',
-                    'type' => 'Filter-Typ',
-                    'filter' => 'Filter',
-                    'custom_title' => 'Benutzerdefinierter Titel',
-                    'custom_artwork' => 'Benutzerdefinierte Grafik'
+                    'custom_artwork' => ['nullable', 'image', Rule::dimensions()->ratio('1/1')->minWidth(1400)->minHeight(1400)->maxWidth(3000)->maxHeight(3000)]
                 ]);
             } catch (ValidationException $e) {
                 $errors = '';

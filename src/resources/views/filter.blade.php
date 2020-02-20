@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html>
+@extends("layouts.app")
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>{{ env('APP_NAME') }}</title>
-    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="/assets/css/styles.min.css">
-</head>
-
-<body>
-<div class="contact-clean">
+@section("content")
     <form method="post" action="/url">
         <h2 class="text-center"><strong>{{ env('APP_NAME') }}</strong></h2>
         @if (isset($errors))
@@ -30,9 +19,11 @@
                     <div class="form-check"><input class="form-check-input" type="radio" id="radio-blacklist" name="type" value="blacklist"><label class="form-check-label" for="radio-blacklist">Blacklist</label></div>
                 </div>
             </div><small class="form-text text-muted" id="hint-whitelist">Erlaubt nur Episoden, die eins der unten angegebenen Wörter im Titel beinhaltet.</small><small class="form-text text-muted d-none" id="hint-blacklist">Erlaubt nur Episoden, die die unten angegebenen Wörter <strong>NICHT</strong> im Titel beinhalten.</small></div>
-        <div
-            class="form-group"><textarea name="filter" class="form-control" id="textFilter" placeholder="Filter (einen pro Zeile)" style="height: 200px;" required></textarea></div>
-        <div class="form-group"><button class="btn btn-primary btn-block" type="submit">URL erzeugen</button></div><div class="collapse-line-element">
+        <div class="form-group">
+            <textarea name="filter" class="form-control" id="textFilter" placeholder="Filter (einen pro Zeile)" style="height: 200px;" required></textarea>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit">URL erzeugen</button></div><div class="collapse-line-element">
             <div class="collapse-line-container">
                 <div class="collapse-line">
                     <a class="" data-toggle="collapse" href="#collapse-advanced" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -64,10 +55,4 @@
             </div>
         </div>
     </form>
-</div>
-<script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="/assets/js/script.min.js"></script>
-</body>
-
-</html>
+@endsection
