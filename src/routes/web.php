@@ -12,6 +12,10 @@
 */
 
 $router->get('/', 'UrlGenerator@showForm');
+
 $router->post('/url', 'UrlGenerator@generateUrl');
 $router->get('/url', 'UrlGenerator@generateUrl');
+
 $router->get('/feed', 'Podfilter@filter');
+
+$router->get('/artwork/{filename}', 'Artwork@serve');

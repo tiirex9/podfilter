@@ -1,7 +1,7 @@
 @extends("layouts.app")
 
 @section("content")
-    <form method="post" action="/url">
+    <form method="post" action="/url" enctype="multipart/form-data">
         <h2 class="text-center"><strong>{{ env('APP_NAME') }}</strong></h2>
         @if (isset($errors))
             <p class="alert alert-danger">

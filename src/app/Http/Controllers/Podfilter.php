@@ -18,6 +18,9 @@ class Podfilter extends Controller
         $this->blacklist = $_GET['blacklist'] ?? [];
         if (is_string($this->blacklist)) $this->blacklist = [$this->blacklist];
 
+        $custom_title = $_GET['title'] ?? null;
+        $custom_artwork = $_GET['artwork'] ?? null;
+
         // Check parameter
         if (!isset($podcastUrl)) {
             return response('Der Parameter "url" muss den RSS Podcast Feed enthalten.', 400);
@@ -45,6 +48,22 @@ class Podfilter extends Controller
                 $dom->parentNode->removeChild($dom);
             }
         }
+
+        // Override title
+        if (isset($_GET['title'])) {
+            $titleNode = $xml->xpath('//channel/title')[0];
+            $titleNode[0] = htmlentities($_GET['title']);
+
+            $itunesTitleNode = $xml->xpath('//channel/itunes:title')[0];
+            $itunesTitleNode[0] = htmlentities($_GET['title']);
+        }
+
+        // Override artwork
+        if (isset($_GET['artwork'])) {
+            $artworkNode = $xml->xpath('//channel/itunes:image')[0];
+            $artworkNode['href'] = url('/artwork/'. urlencode($_GET['artwork']));
+        }
+
 
         return response($xml->asXML())
             ->header('Content-Type', 'application/xml; charset=utf-8');

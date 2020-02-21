@@ -6,9 +6,10 @@
     "type": "project",
     "require": {
         "php": "^7.2",
-        "laravel/lumen-framework": "^6.0",
+        "ext-dom": "*",
         "ext-simplexml": "*",
-        "ext-dom": "*"
+        "laravel/lumen-framework": "^6.0",
+        "league/flysystem": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.4",
