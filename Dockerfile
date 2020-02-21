@@ -16,3 +16,5 @@ COPY --chown=1000:1000 src ./
 
 RUN set -eux; \
     composer dump-autoload -o
+
+VOLUME /app/storage/artworks
