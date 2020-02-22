@@ -46,7 +46,7 @@
 
                 <div class="custom-file">
                     <input type="file" name="custom_artwork" id="file-thumbnail" class="custom-file-input">
-                    <label for="file-thumbnail" class="custom-file-label text-muted">Benutzerdefinierte Grafik</label>
+                    <label for="file-thumbnail" class="custom-file-label text-muted" data-browse="Durchsuchen">Benutzerdefinierte Grafik</label>
                     <small class="form-text text-muted">
                         Verändere die Grafik des Podcasts, damit du ihn leicht in der Liste deiner abonnierten Podcasts wiederfindest. Es wird eine quadratische Grafik mit min. 1400x1400px und max. 3000x3000px erwartet.
                     </small>
