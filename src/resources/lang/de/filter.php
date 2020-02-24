@@ -1,7 +1,7 @@
 <?php
 
 return [
-    "placeholder_url" => "Podcast Feed-URL",
+    "placeholder_url" => "Feed-URL",
     "hint_url" => 'Trage hier die URL zu dem XML Feed deines zu filternden Podcasts ein. Wenn du diese nicht kennst, kannst du sie auf <a href="https://www.listennotes.com/">listennotes.com</a> herausfinden.',
     "label_whitelist" => "Whitelist",
     "hint_whitelist" => 'Erlaubt nur Episoden, die eins der unten angegebenen Wörter im Titel beinhaltet.',
