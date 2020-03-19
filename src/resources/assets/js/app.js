@@ -4,12 +4,12 @@ $(function() {
         $("#hint-whitelist, #hint-blacklist").toggleClass("d-none");
     });
 
-    // Dynamic custom file input
-    bsCustomFileInput.init();
-
     // Clipboard functionality
     new ClipboardJS(".clipboard-copy");
-    
+
+    // Dynamic custom file input
+    bsCustomFileInput.init();
+
     // Watch for custom-file-label to change
     $(".custom-file-input").change(function(e) {
         var $input = $(e.target);

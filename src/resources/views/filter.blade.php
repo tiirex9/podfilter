@@ -12,15 +12,16 @@
             <input class="form-control" type="url" id="textUrl" name="url" placeholder="{{ __('filter.placeholder_url') }}" required="">
             <small class="form-text text-muted">@lang("filter.hint_url")</small>
         </div>
-        <div
-            class="form-group">
-            <div class="form-row" style="margin: 0;">
-                <div class="col">
-                    <div class="form-check"><input class="form-check-input" type="radio" id="radio-whitelist" name="type" value="whitelist" checked=""><label class="form-check-label" for="radio-whitelist">@lang('filter.label_whitelist')</label></div>
-                </div>
-                <div class="col">
-                    <div class="form-check"><input class="form-check-input" type="radio" id="radio-blacklist" name="type" value="blacklist"><label class="form-check-label" for="radio-blacklist">@lang('filter.label_blacklist')</label></div>
-                </div>
+        <div class="form-group">
+            <div class="btn-group btn-group-toggle w-100" data-toggle="buttons">
+                <label class="btn btn-primary active">
+                    <input type="radio" id="radio-whitelist" name="type" value="whitelist" checked>
+                    @lang('filter.label_whitelist')
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" id="radio-blacklist" name="type" value="blacklist">
+                    @lang('filter.label_blacklist')
+                </label>
             </div>
             <small class="form-text text-muted" id="hint-whitelist">@lang('filter.hint_whitelist')</small>
             <small class="form-text text-muted d-none" id="hint-blacklist">@lang('filter.hint_blacklist')</small>
