@@ -27,7 +27,7 @@ class Podfilter extends Controller
         }
 
         if (empty($podcastUrl)) {
-            return response('Der Parameter "uri" muss eine gültige URL enthalten.', 400);
+            return response('Der Parameter "url" muss eine gültige URL enthalten.', 400);
         }
 
         if (empty($this->whitelist) && empty($this->blacklist)) {
