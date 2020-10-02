@@ -1,8 +1,7 @@
-FROM webdevops/php-nginx:alpine-php7
+FROM webdevops/php-nginx:7.4-alpine
 
 ENV WEB_DOCUMENT_ROOT /app/public
 
-USER application
 WORKDIR /app
 
 COPY --chown=1000:1000 src/composer.json src/composer.lock ./
