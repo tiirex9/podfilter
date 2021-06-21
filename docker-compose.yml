@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   podfilter:
-    image: tiirex9/podfilter:latest
+    image: tiifuchs/podfilter:latest
     build: .
     ports:
       - 8080:80
