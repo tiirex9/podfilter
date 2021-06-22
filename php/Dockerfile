@@ -31,4 +31,5 @@ RUN set -eux; \
 
 EXPOSE 80
 VOLUME /app/storage/artworks
+ENTRYPOINT []
 CMD ["/usr/bin/supervisord"]
