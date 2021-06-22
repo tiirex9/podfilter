@@ -2,7 +2,7 @@
 Web application that filters your podcast RSS feeds in realtime.
 
 # Docker
-Ready to use Docker container: https://hub.docker.com/r/tiirex9/podfilter
+Ready to use Docker container: https://hub.docker.com/r/tiifuchs/podfilter
 
 ## Environment variables
 | Variable     | Description                                         | Default       |
