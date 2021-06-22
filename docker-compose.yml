@@ -2,7 +2,9 @@ version: '3.7'
 services:
   podfilter:
     image: tiifuchs/podfilter:latest
-    build: .
+    build:
+      context: .
+      dockerfile: php/Dockerfile
     ports:
       - 8080:80
     volumes:
