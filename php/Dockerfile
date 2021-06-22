@@ -29,5 +29,6 @@ COPY --chown=www-data src ./
 RUN set -eux; \
     composer dump-autoload -o
 
+EXPOSE 80
 VOLUME /app/storage/artworks
 CMD ["/usr/bin/supervisord"]
